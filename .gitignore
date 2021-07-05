@@ -11,6 +11,9 @@
 /db/*.sqlite3
 /db/*.sqlite3-*
 
+#ignore the SQLite Test Files
+/db/test.*
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
