@@ -37,16 +37,16 @@ class UserTest < ActiveSupport::TestCase
   test "email validation should reject invalid addresses" do
     invalid_addresses = %w[user@site,com user_at_site.org user.name@example. user@web_site.com]
 
-    ## values are not valid in Rails Console, is valid in test?
-    # invalid_addresses.each do |addr|
-    #   assert_not @user.valid?, "#{addr.inspect} should be invalid"
-    # end
+    invalid_addresses.each do |addr|
+      @user.email = addr
+      assert_not @user.valid?, "#{addr.inspect} should be invalid"
+    end
   end
 
-  test "email addresses should be unique" do
-    duplicate_user = @user.dup
-    duplicate_user.email = @user.email.upcase
+  test "email addresses should be saved as lower-case" do
+    mixed_case_email = "Foo@ExaMPLE.Com"
+    @user.email = mixed_case_email
     @user.save
-    assert_not duplicate_user.valid?
+    assert_equal mixed_case_email.downcase, @user.reload.email
   end
 end
