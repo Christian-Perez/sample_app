@@ -6,10 +6,10 @@
     <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
 
       <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.email_field :email, class: 'form-control', value: 'user1@email.com' %>
 
       <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.password_field :password, class: 'form-control', value: 'password' %>
 
       <%= f.submit "Log in", class: 'btn btn-primary' %>
 
