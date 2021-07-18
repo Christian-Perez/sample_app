@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       reset_session
+      remember @user
       log_in @user
       flash[:success] = 'Signup Successful!'
       redirect_to @user
