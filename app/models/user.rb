@@ -48,6 +48,11 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, User.digest(remember_token))
     # ) then puts 'it worked' else puts "it didn't work" end
     ## it worked
+    remember_digest
+  end
+
+  def session_token
+    remember_digest || remember
   end
 
   # returns true if the given token matches the remember_digest
