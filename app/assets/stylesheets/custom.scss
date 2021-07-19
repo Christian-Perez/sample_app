@@ -20,17 +20,6 @@ $light-gray: #777;
 }
 
 /* universal */
-
-/* miscellaneous */
-.debug_dump {
-  clear: both;
-  float: left;
-  wiedth: 100%;
-  margin-top: 45px;
-  @include box-sizing;
-}
-
-/* universal */
 body {
   padding-top: 60px;
 }
@@ -136,6 +125,21 @@ aside {
  input {
    height: auto !important;
  }
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
 /* Footer */
 footer {
   margin-top: 45px;
